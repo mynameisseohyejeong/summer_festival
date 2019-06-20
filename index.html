@@ -1,0 +1,794 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>더위사냥 in 대프리카 </title>
+
+<script type="text/javascript">
+function date(id){
+  var  divelement = document.getElementById(id);
+
+  if(divelement.style.display=='block')
+  divelement.style.display='none';
+  else {
+    divelement.style.display='block';
+  }
+}
+
+</script>
+
+<style>
+
+#background_img{
+  display: none;
+}
+
+*, ::before, ::after {
+box-sizing: border-box;
+}
+body {
+position: relative;
+margin: 0;
+overflow: hidden;
+display: flex;
+height: 100vh;
+flex-direction: column;
+font-family: 'Roboto Condensed', sans-serif;
+background-color: #000000;
+justify-content: center;
+align-items: center;
+font-size: 14.5px;
+}
+.scrolls {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: 1.25em;
+z-index: 2;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-size: 2rem;
+}
+.scrolls .center {
+font-size: 0.825rem;
+}
+.smooth {
+position: relative;
+width: 100%;
+height: 100%;
+scroll-behavior: smooth;
+overflow-y: scroll;
+scroll-snap-type: mandatory;
+scroll-snap-points-y: repeat(100vh);
+scroll-snap-type: y mandatory;
+}
+
+
+section {
+  margin: 0 auto;
+position: relative;
+display: flex;
+width: 85%; height: 100vh;
+flex-flow: column wrap;
+align-items: center;
+justify-content: center;
+
+background-color: #f4f4f4;
+background-image: url(main.png);
+background-size: cover;
+scroll-snap-align: center;
+}
+
+section:nth-child(2) {
+background-image: url(when.png);
+}
+
+section:nth-child(3) {
+background-image: url(when_8.png);
+}
+
+section:nth-child(4) {
+background-image: url(where.png);
+}
+
+section:nth-child(5) {
+background-image: url(where_raincoat.png);
+}
+
+section:nth-child(6) {
+background-image: url(what.png);
+}
+
+
+section:nth-child(7) {
+background-image: url(what_concert.png);
+}
+
+
+
+#table1, #table2, #table3{position: absolute;
+left:50%;
+top:2%;
+transform: translatex(-50%);
+}
+
+
+#table0{position: relative;
+bottom:-80px;      }
+
+#table3_01{position: absolute;
+
+                 }
+
+#change:hover {    background: url('icecream_02.png') no-repeat;
+    height: 108px;
+    width: 63px;
+}
+
+
+#change2:hover {    background: url('egg_02.png') no-repeat;
+    height: 108px;
+    width: 63px;
+}
+
+
+#change3:hover {    background: url('cone_02.png') no-repeat;
+    height: 108px;
+    width: 63px;
+}
+
+#yes:hover {
+opacity: 0; }
+
+#change_02:hover {background: url('egg_serve_02.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+#change_0333:hover {background: url('egg_serve_02.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+
+
+#change_03:hover {background: url('cone_serve_02.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+
+#change_033:hover {background: url('cone_serve_02.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+#change_022:hover {background: url('icecream_serve_03.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+
+#change_0222:hover {background: url('icecream_serve_03.png') no-repeat;
+    height: 88.5px;
+    width: 59px;
+}
+
+
+#raincoat:hover {    background: url('비옷을구매한다_02.png') no-repeat;
+              height: 180px;
+              width: 195px;
+}
+
+#concert:hover {    background: url('공연을관람한다_02.png') no-repeat;
+              height: 180px;
+              width: 195px;
+}
+
+.e_world:hover {    background: url('e-world_change.png') no-repeat;
+              height:24px;
+              width: 119px;
+}
+.e_world{width: 119px; height: 24px; z-index:1px;
+        position: absolute;
+        left:25%;
+        top:30%;;
+      }
+
+
+      #july {
+        width: 64px;
+        height: 36px;
+
+       cursor: pointer;
+        position: absolute;
+        left:1%;
+        top:40%;
+      }
+
+      #august {
+        width: 64px;
+        height: 36px;
+        cursor: pointer;
+        position: absolute;
+        left:1%;
+        top:43.5%;
+      }
+
+#august:hover .august_01{
+  width:277px;
+}
+
+      #july:hover .july_01{
+        width: 159px;
+      }
+
+    .july, .august{
+        display: block;
+        width: 64px;
+        height: 36px;
+      }
+
+
+#july:hover .july{
+        opacity: 0;
+      }
+
+#august:hover .august{
+              opacity: 0;
+            }
+
+.july_01, .august_01{
+        width: 0;
+        height:  93.5px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 0.7s ease;
+
+      }
+
+.july_01{
+  z-index: 1;
+}
+
+.calender
+  {
+    width:360px;
+    height: auto;
+    background: #EDEDED;
+    box-sizing: : border-box;
+    position: absolute;
+left:27%;
+top:35%;
+
+  }
+
+.calender .date
+  {
+    font-family: 나눔바른펜, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    box-sizing: border-box;
+  }
+
+.calender .number
+{
+  font-family: Tehoma, sans-serif;
+}
+
+.calender .date div
+  {
+align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 52px;
+    color: #000000;
+    border-radius: 50%
+  }
+
+
+
+  .calender .date div.number.active
+  {
+    background: #CCCCCC;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+
+  .calender .date div.number:active
+  {
+    background: #E53A2E;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+
+.calender .date div.number:hover
+{
+  color:#E53A2E;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calender .date div.number.none
+{
+  color:#999999;
+}
+
+#right-side{width: 300px;
+height: auto;
+position: absolute;
+top:35%;
+left:58%;
+background-color: #EDEDED;
+}
+
+
+.left{
+line-height: 6; float: left; font-size: 14px;
+}
+.right{
+line-height: 3; float: right; font-size: 25px;
+font-weight: 1000;}
+.caution{
+float: left; clear:both;
+font-size: 14px;
+color:#E53A2E; font-weight:bold;
+margin-top: 20px;}
+
+.title{ font-size: 40px; font-weight: 900;}
+
+
+#hide, #hide1, #hide2, #hide3, #hide4, #hide5, #hide6, #hide7, #hide8 {
+  display: none;
+}
+
+
+</style>
+</head>
+
+<body>
+  <div class="smooth">
+
+<section id="home">
+
+  <table id="table0" width="336px" height="108px">
+
+  <td id="change">
+   <a href="#when">
+       <img id="yes" src="icecream.png" >
+   </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+
+  </td>
+
+  <td id="change2">
+  <a href="#where">
+    <img id="yes" src="egg.png" >
+  </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+  </td>
+
+  <td id="change3">
+  <a href="#what">
+       <img id="yes" src="cone.png" >
+   </a>
+  </td>
+
+  </table>
+
+</section>
+
+<section id="when">
+
+<div id="month">
+
+  <div id="july">
+  <img class="july" src="july.png">
+  <a href="#when">
+  <img class="july_01" src="july_02.png">
+</a>
+  </div>
+
+  <div id="august">
+
+  <img class="august" src="august.png">
+    <a href="#when_8">
+  <img class="august_01" src="august_02.png">
+</a>
+
+  </div>
+</div>
+
+<table id="table1"width="263px" height="88.5px">
+
+  <td >
+   <a href="#when">
+       <img src="icecream_serve.png" >
+   </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+  </td>
+
+  <td id="change_02">
+  <a href="#where">
+       <img id="yes" src="egg_serve.png" >
+   </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+  </td>
+
+  <td id="change_03">
+    <a href="#what">
+       <img id="yes" src="cone_serve.png" >
+   </a>
+  </td>
+
+  </table>
+  <div class="calender">
+<div class="date">
+  <div class="day">일</div>
+  <div class="day">월</div>
+  <div class="day">화</div>
+  <div class="day">수</div>
+  <div class="day">목</div>
+  <div class="day">금</div>
+  <div class="day">토</div>
+  <div class="number"></div>
+  <div class="number none">1</div>
+  <div class="number none">2</div>
+  <div class="number none">3</div>
+  <div class="number none">4</div>
+  <div class="number none">5</div>
+  <div class="number none">6</div>
+  <div class="number none">7</div>
+  <div class="number none">8</div>
+  <div class="number none">9</div>
+  <div class="number none">10</div>
+  <div class="number none">11</div>
+  <div class="number none">12</div>
+  <div class="number none">13</div>
+  <div class="number none">14</div>
+  <div class="number none">15</div>
+  <div class="number none">16</div>
+  <div class="number none">17</div>
+  <div class="number active">18</div>
+  <div class="number none">19</div>
+  <div class="number none">20</div>
+  <div class="number none">21</div>
+  <div class="number none">22</div>
+  <div class="number" onclick="date('hide');">23</div>
+  <div class="number" onclick="date('hide1');">24</div>
+  <div class="number" onclick="date('hide2');">25</div>
+  <div class="number" onclick="date('hide3');">26</div>
+  <div class="number" onclick="date('hide4');">27</div>
+  <div class="number" onclick="date('hide5');">28</div>
+  <div class="number" onclick="date('hide6');">29</div>
+  <div class="number" onclick="date('hide7');">30</div>
+  <div class="number" onclick="date('hide8');">31</div>
+
+
+
+</div>
+</div>
+<div id="right-side">
+  <div id="hide">
+<img src="23.png" style="width:350px; height:310px;">
+  </div>
+
+  <div id="hide1">
+<img src="24.png" style="width:350px; height:310px;">
+  </div>
+
+  <div id="hide2">
+<img src="25.png" style="width:350px; height:310px;">
+  </div>
+  <div id="hide3">
+<img src="26.png" style="width:350px; height:310px;">
+  </div>
+  <div id="hide4">
+  <img src="27.png" style="width:350px; height:310px;">
+  </div>
+  <div  id="hide5">
+    <img src="none.png" style="width:350px; height:310px;">
+  </div>
+
+  <div  id="hide6">
+    <img src="none.png" style="width:350px; height:310px;">
+  </div>
+   <div  id="hide7">
+    <img src="none.png" style="width:350px; height:310px;">
+  </div>
+  <div  id="hide8">
+    <img src="none.png" style="width:350px; height:310px;">
+  </div>
+
+
+</div>
+</section>
+
+
+<section id="when_8">
+
+<div id="month">
+
+  <div id="july">
+  <img class="july" src="when_july_02.png">
+  <a href="#when">
+  <img class="july_01" src="july_02.png">
+</a>
+  </div>
+
+  <div id="august">
+
+  <img class="august" src="when_august_02.png">
+    <a href="#when_8">
+  <img class="august_01" src="august_02.png">
+</a>
+
+  </div>
+</div>
+
+<table id="table1"width="263px" height="88.5px">
+
+  <td >
+   <a href="#when">
+       <img src="icecream_serve.png" >
+   </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+  </td>
+
+  <td id="change_02">
+  <a href="#where">
+       <img id="yes" src="egg_serve.png" >
+   </a>
+  </td>
+
+  <td id="fix">
+    <img src="dote.png" >
+  </td>
+
+  <td id="change_03">
+    <a href="#what">
+       <img id="yes" src="cone_serve.png" >
+   </a>
+  </td>
+
+  </table>
+  <div class="calender">
+<div class="date">
+  <div class="day">일</div>
+  <div class="day">월</div>
+  <div class="day">화</div>
+  <div class="day">수</div>
+  <div class="day">목</div>
+  <div class="day">금</div>
+  <div class="day">토</div>
+  <div class="number"></div>
+  <div class="number none">1</div>
+  <div class="number none">2</div>
+  <div class="number none">3</div>
+  <div class="number none">4</div>
+  <div class="number none">5</div>
+  <div class="number none">6</div>
+  <div class="number none">7</div>
+  <div class="number none">8</div>
+  <div class="number none">9</div>
+  <div class="number none">10</div>
+  <div class="number none">11</div>
+  <div class="number none">12</div>
+  <div class="number none">13</div>
+  <div class="number none">14</div>
+  <div class="number none">15</div>
+  <div class="number none">16</div>
+  <div class="number none">17</div>
+  <div class="number none ">18</div>
+  <div class="number none">19</div>
+  <div class="number none">20</div>
+  <div class="number none">21</div>
+  <div class="number none">22</div>
+  <div class="number none" >23</div>
+  <div class="number none" >24</div>
+  <div class="number none" >25</div>
+  <div class="number none" >26</div>
+  <div class="number none" >27</div>
+  <div class="number none">28</div>
+  <div class="number none">29</div>
+  <div class="number none">30</div>
+  <div class="number none">31</div>
+
+
+
+</div>
+</div>
+
+<div id="right-side">
+
+<img src="none.png" style="width:350px; height:310px;">
+  </div>
+</section>
+
+
+
+
+<section id="where">
+  <div class="e_world">
+    <a href="http://www.eworld.kr/main/main.htm">
+  <img id="yes" src="e-world.png">
+</a>
+ </div>
+
+    <table id="table2" width="263px" height="88.5px">
+      <td id="change_022">
+       <a href="#when">
+          <img id="yes" src="icecream_serve_02.png" >
+       </a>
+      </td>
+
+       <td id="fix">
+         <img src="dote.png" >
+       </td>
+
+       <td >
+          <a href="#where">
+           <img  src="egg_serve_03.png" >
+          </a>
+        </td>
+
+      <td id="fix">
+        <img src="dote.png" >
+      </td>
+
+      <td id="change_033">
+        <a href="#what">
+          <img id="yes" src="cone_serve.png" >
+        </a>
+      </td>
+
+</table>
+</section>
+
+<section id="where1">
+<div class="e_world">
+    <a href="http://www.eworld.kr/main/main.htm">
+  <img id="yes" src="e-world.png">
+</a>
+ </div>
+
+    <table id="table2" width="263px" height="88.5px">
+      <td id="change_022">
+       <a href="#when">
+          <img id="yes" src="icecream_serve_02.png" >
+       </a>
+      </td>
+
+       <td id="fix">
+         <img src="dote.png" >
+       </td>
+
+       <td >
+          <a href="#where">
+           <img  src="egg_serve_03.png" >
+          </a>
+        </td>
+
+      <td id="fix">
+        <img src="dote.png" >
+      </td>
+
+      <td id="change_033">
+        <a href="#what">
+          <img id="yes" src="cone_serve.png" >
+        </a>
+      </td>
+
+</table>
+</section>
+
+
+<section id="what">
+    <table id="table3" width="263px" height="88.5px">
+    <td id="change_0222">
+       <a href="#when">
+       <img id="yes" src="icecream_serve_02.png" >
+      </a>
+    </td>
+
+    <td id="fix">
+      <img src="dote.png" >
+    </td>
+
+    <td id="change_0333">
+      <a href="#where">
+         <img id="yes" src="egg_serve.png" >
+      </a>
+    </td>
+
+    <td id="fix">
+      <img src="dote.png" >
+    </td>
+
+    <td>
+       <a href="#what">
+         <img  src="cone_serve_03.png" >
+       </a>
+    </td>
+
+    </table>
+
+    <table id="table3_01" width="595px" height="108px">
+      <td id="raincoat" align="middle">
+        <a href="#where1">
+            <img id="yes" src="비옷을구매한다.png" >
+        </a>
+      </td>
+
+      <td id="concert" align="middle">
+        <a href="#what1">
+            <img id="yes" src="공연을관람한다.png" >
+        </a>
+      </td>
+
+    <td id="rancoat" align="middle">
+              <img src="get-wet.png" >
+
+        </td>
+
+    </table>
+</section>
+
+<section id="what1">
+    <table id="table3" width="263px" height="88.5px">
+    <td id="change_0222">
+       <a href="#when">
+       <img id="yes" src="icecream_serve_02.png" >
+      </a>
+    </td>
+
+    <td id="fix">
+      <img src="dote.png" >
+    </td>
+
+    <td id="change_0333">
+      <a href="#where">
+         <img id="yes" src="egg_serve.png" >
+      </a>
+    </td>
+
+    <td id="fix">
+      <img src="dote.png" >
+    </td>
+
+    <td>
+       <a href="#what">
+         <img  src="cone_serve_03.png" >
+       </a>
+    </td>
+
+    </table>
+
+
+</section>
+
+</div>
+</body>
+
+</html>
